@@ -9,11 +9,9 @@ Summary:        Provable Prime Number Generator suitable for Cryptographic Appli
 Source0:        ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{realname}-%{version}.tar.bz2
 Url:            http://www.cpan.org
 Prefix:         %{_prefix}
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  perl-Crypt-Random
 Requires:       perl
 BuildArch:      noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 This module implements Ueli Maurer's algorithm for
