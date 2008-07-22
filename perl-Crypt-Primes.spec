@@ -1,6 +1,6 @@
 Name:           perl-Crypt-Primes
 Version:        0.50
-Release:        %mkrel 4
+Release:        %mkrel 6
 License:        GPL or Artistic
 
 %define realname        Crypt-Primes
