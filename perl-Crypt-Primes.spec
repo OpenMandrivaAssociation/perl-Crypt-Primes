@@ -1,18 +1,19 @@
-Name:           perl-Crypt-Primes
-Version:        0.50
-Release:        %mkrel 6
-License:        GPL or Artistic
+%define upstream_name    Crypt-Primes
+%define upstream_version 0.50
 
-%define realname        Crypt-Primes
-Group:          Development/Perl
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Summary:        Provable Prime Number Generator suitable for Cryptographic Application
-Source0:        ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{realname}-%{version}.tar.bz2
-Url:            http://www.cpan.org
-Prefix:         %{_prefix}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Provable Prime Number Generator suitable for Cryptographic Application
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl-Crypt-Random
-Requires:       perl
 BuildArch:      noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module implements Ueli Maurer's algorithm for
@@ -33,7 +34,7 @@ gathered with Crypt::Random, a perl interface to
 systems.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" echo | %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -49,11 +50,9 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-
 %files
 %defattr(-,root,root)
 %doc README
 %{_bindir}/largeprimes
 %{perl_vendorlib}/*
 %{_mandir}/*/*
-
