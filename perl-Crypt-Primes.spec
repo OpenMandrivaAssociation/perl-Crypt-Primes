@@ -1,14 +1,14 @@
 %define modname	Crypt-Primes
-%define modver	0.50
+%define modver	0.52
 
 Summary:	Provable Prime Number Generator suitable for Cryptographic Application
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	17
+Version:	%{modver}
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Crypt/%{modname}-%{modver}.tar.bz2
+Url:		https://github.com/perl-Crypt-OpenPGP/Crypt-Primes
+Source0:	https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/Crypt-Primes-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl-devel
